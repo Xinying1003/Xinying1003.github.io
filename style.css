@@ -4,17 +4,27 @@
 
 .navbar-brand {
     font-size: 1.75em;
+    color: #fff;
+    font-family: "Arial", sans-serif;
+    font-weight: bold;
 }
 
-.navbar-collapse {
-    flex-basis: 100%;
-flex-grow: 1;
-align-items: center;
+@media (max-width: 768px) {
+    .navbar-brand {
+        font-size: 1.55em;
+        margin-left: 5%;
+    }
 }
 
-.navbar-toggler {
-    font-size: 80%;
-padding: 0.8rem;
+.carousel-item img{
+    margin-top: 70px; /* 根据需要调整上边距的数值 */
+    object-fit: cover;
+  width: 100%;
+  height: 100%;
+  }
+
+.carousel-inner {
+    transition: opacity 0.5s ease-in-out;
 }
 
 .svg-inline--fa {
@@ -22,6 +32,10 @@ padding: 0.8rem;
 height: 1em;
 overflow: visible;
 vertical-align: -.125em;
+}
+
+.custom-navbar-toggler-icon{
+    fill: white;
 }
 
 .navbar-nav {
@@ -38,6 +52,7 @@ margin-bottom: 0;
 list-style: none;
 }
 
+
 .mx-0 {
     margin-right: 0 !important;
 margin-left: 0 !important;
@@ -45,20 +60,24 @@ margin-left: 0 !important;
 
 
 .title-box {
-    position: fixed;
-top: 30vh;
-left: 0;
-width: 100%;
-font-size: 300px;
-font-weight: bold;
-text-align: center;
-z-index: 1;
-    color: rgb(243, 170, 187);
     position: absolute;
-    top: 30vh;
+    top: 150px;
     left: 5%;
     width: 400px;
+    text-align: center;
+    z-index: 1;
 }
+
+@media screen and (max-width: 768px) {
+    .title-box {
+        position: absolute;
+        z-index: 1;
+        width: 90px;
+        top: 12vh;
+      left: 10%;
+    }
+  }
+  
 
 .content--img {
     max-width: 100%;
@@ -74,6 +93,12 @@ z-index: 1;
     font-weight: bold;
 }
 
+@media screen and (max-width: 768px) {
+    .big-title {
+        font-size: 6rem;
+    }
+}
+
 .big-title2 {
     color: rgb(107, 186, 255);
     margin-top: 40px;
@@ -81,6 +106,12 @@ z-index: 1;
     text-align: center;
     font-size: 9rem;
     font-weight: bold;
+}
+
+@media screen and (max-width: 768px) {
+    .big-title2 {
+        font-size: 6rem;
+    }
 }
 
 .big-title3 {
@@ -92,9 +123,35 @@ z-index: 1;
     font-weight: bold;
 }
 
+@media screen and (max-width: 768px) {
+    .big-title3 {
+        font-size: 6rem;
+    }
+}
+
 .photo-box {
     margin-top: 40px;
     margin-bottom: 60px;
+}
+
+@media screen and (max-width: 767px) {
+    .photo-box {
+      flex-direction: column;
+    }
+  }
+
+@media screen and (max-width: 768px) {
+    .osaka1 {
+        margin-top: 2%;
+        margin-bottom: 60px;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .photo-box {
+        margin-top: 40px;
+    margin-bottom: 60px;
+    }
 }
 
 .footer {
@@ -107,3 +164,38 @@ z-index: 1;
 .img_fluid {
     right: 5%;
 }
+
+
+.img-zoom {
+    transition: transform 0.3s;
+    position: relative;
+    z-index: 1;
+}
+
+.img-zoom:hover {
+    transform: scale(1.2);
+    z-index: 2;
+}
+
+@keyframes up-down-animation {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+
+/* 應用動畫到文字 */
+.animated-text {
+    animation: up-down-animation 1s infinite;
+}
+
+.floating-image {
+    position: absolute;
+    animation: floatAnimation 4s ease-in-out infinite;
+}
+
+@keyframes floatAnimation {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+
